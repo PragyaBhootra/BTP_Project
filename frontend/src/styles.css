@@ -1,0 +1,312 @@
+:root {
+  --ink: #1c2430;
+  --slate: #445064;
+  --line: #dde2e8;
+  --paper: #f7f8fa;
+  --accent: #1d5f4e;
+  --accent-soft: #e7f0ec;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.page { min-height: 100vh; display: flex; flex-direction: column; }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  background: white;
+}
+
+.topbar-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.topbar-title { font-weight: 600; }
+
+.topbar-user {
+  margin-left: auto;
+  color: var(--slate);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.chat-card {
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+  padding: 1rem;
+}
+
+.chat-log {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.bubble {
+  max-width: 80%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.bubble-bot { align-self: flex-start; background: var(--accent-soft); color: var(--ink); }
+.bubble-user { align-self: flex-end; background: var(--accent); color: white; }
+
+.chat-input-row, .chat-submit-row {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.chat-input-row input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+button:disabled { opacity: 0.6; cursor: default; }
+
+.chat-submit-row { justify-content: center; }
+.status-ok { color: var(--accent); font-size: 0.9rem; }
+.status-err { color: #b3261e; font-size: 0.9rem; }
+
+/* ---------- Auth screen ---------- */
+
+.auth-shell {
+  width: 100%;
+  max-width: 920px;
+  min-height: 560px;
+  display: grid;
+  grid-template-columns: 1.15fr auto 1fr;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(28, 36, 48, 0.06), 0 12px 32px rgba(28, 36, 48, 0.08);
+}
+
+.auth-brand {
+  background: linear-gradient(165deg, #1d5f4e 0%, #163f34 100%);
+  color: #f3f7f4;
+  padding: 2.75rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-seal {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(243, 247, 244, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Source Serif 4", serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 2rem;
+}
+
+.auth-headline {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.85rem;
+  line-height: 1.25;
+  margin: 0 0 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+.auth-sub {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(243, 247, 244, 0.78);
+  margin: 0 0 2.25rem;
+  max-width: 34ch;
+}
+
+.auth-steps {
+  list-style: none;
+  margin: auto 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.auth-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.auth-step-num {
+  font-family: "Source Serif 4", serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: rgba(243, 247, 244, 0.55);
+  width: 1.4rem;
+  flex-shrink: 0;
+  padding-top: 0.1rem;
+}
+
+.auth-step-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.87rem;
+}
+
+.auth-step-text strong {
+  font-weight: 600;
+  color: #f3f7f4;
+}
+
+.auth-step-text span:last-child {
+  color: rgba(243, 247, 244, 0.62);
+  font-size: 0.82rem;
+}
+
+/* the ticket-stub perforation between panels */
+.auth-ticket-edge {
+  position: relative;
+  width: 1px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-perf {
+  flex: 1;
+  width: 1px;
+  background-image: linear-gradient(var(--line) 60%, transparent 0%);
+  background-position: center;
+  background-size: 1px 10px;
+  background-repeat: repeat-y;
+  margin: 14px 0;
+}
+
+.auth-notch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--paper);
+  flex-shrink: 0;
+}
+
+.auth-notch-top { margin-top: -8px; }
+.auth-notch-bottom { margin-bottom: -8px; }
+
+.auth-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
+.auth-panel-inner { width: 100%; max-width: 300px; }
+
+.auth-panel-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+
+.auth-panel-title {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+}
+
+.auth-panel-sub {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--slate);
+  margin: 0 0 1.75rem;
+}
+
+.auth-google-wrap { display: flex; justify-content: center; margin-bottom: 1.5rem; }
+
+.auth-fine-print {
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: #8b93a1;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .auth-shell {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+  .auth-ticket-edge { display: none; }
+  .auth-brand { padding: 2rem; }
+  .auth-steps { margin-top: 1.75rem; }
+}

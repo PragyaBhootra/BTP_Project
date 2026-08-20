@@ -1,0 +1,47 @@
+# ---------- Environment / secrets ----------
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+
+# ---------- Python (backend) ----------
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+pip-log.txt
+.pytest_cache/
+
+# Hugging Face / model cache (large, re-downloadable, shouldn't be committed)
+.cache/
+*.bin
+*.safetensors
+
+# ---------- Node / React (frontend) ----------
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+
+# ---------- Logs ----------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---------- OS files ----------
+.DS_Store
+Thumbs.db
+
+# ---------- Editor / IDE ----------
+.vscode/
+.idea/
+*.swp
+
+# ---------- Vercel / Render local artifacts ----------
+.vercel/
